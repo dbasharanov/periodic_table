@@ -1,0 +1,33 @@
+<h1>Listing elements</h1>
+
+<table class="elements">
+  <thead>
+    <tr>
+      <th>Номер</th>
+      <th>Символ</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @elements.each do |element| %>
+      <tr>
+        <td>
+          <%= element.number %>
+        </td> 
+        <td>
+          <%= element.symbol %>
+        </td> 
+        <td>
+          <%= link_to 'Show', element %>
+          <%= link_to 'Edit', edit_element_path(element) %>
+          <%#= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Element', new_element_path %>
